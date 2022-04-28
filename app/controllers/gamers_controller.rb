@@ -19,10 +19,12 @@ class GamersController < ApplicationController
   def edit
   end
 
+  def puzzle
+  end
   # POST /gamers or /gamers.json
   def create
-    @gamer = Gamer.new(gamer_params)
-
+    # @gamer = Gamer.new(gamer_params)
+    @gamer = Gamer.new()
     respond_to do |format|
       if @gamer.save
         format.html { redirect_to gamer_url(@gamer), notice: "Gamer was successfully created." }
