@@ -1,0 +1,44 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Gamers</h1>
+
+<div id="gamers">
+  <% @gamers.each do |gamer| %>
+    <%= render gamer %>
+    <p>
+      <%= link_to "Show this gamer", gamer %>
+    </p>
+  <% end %>
+</div>
+
+<div style="padding: 20px">
+  <table class="table table-dark table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Birth Date</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+      <th scope="col">Instagram</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <div id="gamers">
+      <% @gamers.each_with_index do |gamer, i| %>
+      <%# @gamers.each do |gamer| %>
+        <tr>
+          <th scope="row"><%= (i+1) %></th>
+          <%= render gamer %>
+          <%= link_to "Show this gamer", gamer %>
+        </tr>
+      <% end %>
+    </div>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New gamer", new_gamer_path %>
