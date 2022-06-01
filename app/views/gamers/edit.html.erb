@@ -1,10 +1,12 @@
-<h1>Editing gamer</h1>
+<h1 style="margin: 2%">Editing gamer</h1>
 
-<%= render "form", gamer: @gamer %>
+<div style="margin-left: 3%">
+  <%= render "form", gamer: @gamer %>
+</div>
 
 <br>
 
-<div>
-  <%= link_to "Show this gamer", @gamer %> |
-  <%= link_to "Back to gamers", gamers_path %>
+<div style="margin-left: 2%; font-size: 20px">
+  <%= link_to "Show this gamer", @gamer, style: "color: indigo" %> |
+  <%= link_to "Back to gamers", gamers_path, style: "color: indigo" %>
 </div>

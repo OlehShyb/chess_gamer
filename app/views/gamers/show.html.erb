@@ -2,9 +2,9 @@
 
 <%= render @gamer %>
 
-<div>
-  <%= link_to "Edit this gamer", edit_gamer_path(@gamer) %> |
-  <%= link_to "Back to gamers", gamers_path %>
+<div style="margin-left: 3%; margin-top: -2%; font-size: 20px">
+  <%= link_to "Edit this gamer", edit_gamer_path(@gamer), style: "color: indigo" %> |
+  <%= link_to "Back to gamers", gamers_path, style: "color: indigo" %>
 
   <%= button_to "Destroy this gamer", @gamer, method: :delete %>
 </div>

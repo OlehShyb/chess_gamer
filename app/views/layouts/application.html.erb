@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= @title || "Chess" %></title>
+    <% if action_name == "new" %>
+      <title>New gamer</title>
+    <% elsif action_name == "puzzle" %>
+      <title>Puzzle</title>
+    <% else %>
+      <title>Chess</title>
+    <% end %>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="shortcut icon" href="../../images/chess.ico">
+    <link rel="shortcut icon" href="app/assets/images/chess.ico">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= favicon_link_tag asset_path('chess.ico') %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-  <%= render 'gamers/header' %>
+
+  <% unless action_name == "new" %>
+    <%= render 'home/header' %>
+  <% end %>
 
   <%= yield %>
 

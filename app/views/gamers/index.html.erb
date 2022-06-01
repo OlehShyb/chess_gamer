@@ -11,7 +11,7 @@
       <th scope="col">First name</th>
       <th scope="col">Last name</th>
       <th scope="col">Birth Date</th>
-      <th scope="col">Gender</th>
+<!--      <th scope="col">Gender</th>-->
       <th scope="col">Phone</th>
       <th scope="col">Email</th>
       <th scope="col">Instagram</th>
@@ -31,14 +31,12 @@
           <td>
             <i class="fa fa-rouble"></i>
           </td>
-          <td><%= link_to "Show gamer", gamer_path(i+1), style: 'text-decoration: none' %></td>
-          <td><%= link_to 'Edit', edit_gamer_path(gamer), style: 'text-decoration: none' %></td>
-          <td><%= button_to 'Destroy', gamer, method: :delete %></td>
+          <td><%= link_to "Show", gamer, style: 'text-decoration: none; color: darkorange' %></td>
+          <td><%= link_to 'Edit', edit_gamer_path(gamer), style: 'color: darkorange; text-decoration: none' %></td>
+          <td><%= button_to 'Destroy', gamer, method: :delete, style: 'color: darkred;' %></td>
         </tr>
       <% end %>
     </div>
     </tbody>
   </table>
 </div>
-
-<%#= link_to "New gamer", new_gamer_path %>

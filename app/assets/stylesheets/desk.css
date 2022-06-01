@@ -1,0 +1,37 @@
+.box{
+    background-color: beige;
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    display: inline-block;
+    font-size: 70px;
+    text-align: center;
+    margin: -10px -2px -2px;
+}
+.black{
+    background-color: orchid;
+}
+.number {
+    font-size: 25px;
+    position: relative;
+    height: 0;
+    width: 0;
+    padding-left: 2px;
+}
+.letter {
+    font-size: 25px;
+    position: relative;
+    bottom: -45px;
+    left: 30px;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#one, #three, #five, #seven, #b, #d, #f, #h{
+    color: orchid;
+}
+#two, #four, #six, #eight, #a, #c, #e, #g{
+    color: beige;
+}

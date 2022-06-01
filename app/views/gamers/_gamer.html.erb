@@ -1,15 +1,30 @@
+<% if action_name == "show" %>
+  <div style="margin: 3%">
+    <h1 style="margin: 2%; color: midnightblue; font-size: xxx-large;font-family: 'Comic Sans MS'">Gamer Data</h1>
+    <h4><b>First name: <%= gamer.first_name %></b></h4>
+    <h4><b>Last name: <%= gamer.second_name %></b></h4>
+    <h4><b>Birth date: <%= gamer.birth_date %></b></h4>
+    <h4><b>Phone number: <%= gamer.phone_number %></b></h4>
+    <h4><b>Instagram: <%= gamer.instagram %></b></h4>
+    <h4><b>Email: <%= gamer.email %></b></h4>
+  </div>
+
+<% else %>
 <div id="<%= dom_id gamer %>">
   <td><%= gamer.first_name %></td>
   <td><%= gamer.second_name %></td>
   <td><%= gamer.birth_date %></td>
-  <td><%= gamer.gender %></td>
+<!--  <td><%#= gamer.gender %></td>-->
   <td><%= gamer.phone_number %></td>
   <td><%= gamer.email %></td>
 <!--  <td><%#= gamer.instagram %></td>-->
   <td>
     <%=
-      url_instagram = "www.instagram.com/" + gamer.instagram.delete('@') + "/"
-      link_to gamer.instagram, "https://#{url_instagram}", :target => '_blank', style: 'text-decoration: none'
+      unless gamer.instagram == nil
+        url_instagram = "www.instagram.com/" + gamer.instagram.delete('@') + "/"
+        link_to gamer.instagram, "https://#{url_instagram}", :target => '_blank', style: 'text-decoration: none'
+      end
     %>
   </td>
 </div>
+<% end %>

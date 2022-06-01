@@ -23,17 +23,24 @@ class GamersController < ApplicationController
   end
   # POST /gamers or /gamers.json
   def create
-    # @gamer = Gamer.new(gamer_params)
-    @gamer = Gamer.new()
+    @gamer = Gamer.new(gamer_params)
     respond_to do |format|
       if @gamer.save
-        format.html { redirect_to gamer_url(@gamer), notice: "Gamer was successfully created." }
+        # format.html do
+        #   flash.now[:notice] = "Hello"
+        # end
+        # db = Rails.configuration.database_configuration["development"]["database"].to_s
+        format.html { redirect_to gamer_url(@gamer), notice: ("Gamer was successfully created with data:  First name: [" + @gamer.first_name + " Last name: " + @gamer.second_name + " Birth date: " + @gamer.birth_date + " Phone number: " + @gamer.phone_number + " Instagram: @" + @gamer.instagram + " Email: " + @gamer.email + "]") }
+        # format.html { notice: (db) }
+        # flash.now[:notice] = "We have exactly #{@gamer.first_name} books available."
         format.json { render :show, status: :created, location: @gamer }
+        
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new, status: :unprocessable_entity, notice: ("Gamer wasn't created.. Try again and input valid data for new gamer!") }
         format.json { render json: @gamer.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /gamers/1 or /gamers/1.json
@@ -52,7 +59,6 @@ class GamersController < ApplicationController
   # DELETE /gamers/1 or /gamers/1.json
   def destroy
     @gamer.destroy
-
     respond_to do |format|
       format.html { redirect_to gamers_url, notice: "Gamer was successfully destroyed." }
       format.json { head :no_content }

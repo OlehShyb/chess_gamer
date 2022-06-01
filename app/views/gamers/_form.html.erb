@@ -1,52 +1,74 @@
-<%= form_with(model: gamer) do |form| %>
+<%#= form_with(model: gamer) do |form| %>
+  <%# if gamer.errors.any? %>
+<!--    <div style="color: red">-->
+<!--      <h2><%#= pluralize(gamer.errors.count, "error") %> prohibited this gamer from being saved:</h2>-->
+
+<!--      <ul>-->
+        <%# gamer.errors.each do |error| %>
+<!--          <li><%#= error.full_message %></li>-->
+        <%# end %>
+<!--      </ul>-->
+<!--    </div>-->
+  <%# end %>
+
+<!--  <div>-->
+    <%#= form.label :first_name, style: "display: block" %>
+    <%#= form.text_field :first_name %>
+<!--  </div>-->
+
+<!--  <div>-->
+    <%#= form.label :second_name, style: "display: block" %>
+    <%#= form.text_field :second_name %>
+<!--  </div>-->
+
+<!--  <div>-->
+    <%#= form.label :birth_date, style: "display: block" %>
+    <%#= form.text_field :birth_date %>
+<!--  </div>-->
+
+<!--  <div>-->
+    <%#= form.label :gender, style: "display: block" %>
+    <%#= form.text_field :gender %>
+<!--  </div>-->
+
+<!--  <div>-->
+    <%#= form.label :phone_number, style: "display: block" %>
+    <%#= form.text_field :phone_number %>
+<!--  </div>-->
+
+<!--  <div>-->
+    <%#= form.label :email, style: "display: block" %>
+    <%#= form.text_field :email %>
+<!--  </div>-->
+
+<!--  <div>-->
+    <%#= form.label :instagram, style: "display: block" %>
+    <%#= form.text_field :instagram %>
+<!--  </div>-->
+
+<!--  <div>-->
+    <%#= form.submit %>
+<!--  </div>-->
+<%# end %>
+
+<%= form_with(model: gamer) do |tmp| %>
   <% if gamer.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(gamer.errors.count, "error") %> prohibited this gamer from being saved:</h2>
+      <div style="color: red">
+        <h2><%= pluralize(gamer.errors.count, "error") %> prohibited this gamer from being saved:</h2>
 
-      <ul>
-        <% gamer.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
+        <ul>
+  <% gamer.errors.each do |error| %>
+            <li><%= error.full_message %></li>
   <% end %>
-
-  <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div>
-    <%= form.label :second_name, style: "display: block" %>
-    <%= form.text_field :second_name %>
-  </div>
-
-  <div>
-    <%= form.label :birth_date, style: "display: block" %>
-    <%= form.text_field :birth_date %>
-  </div>
-
-  <div>
-    <%= form.label :gender, style: "display: block" %>
-    <%= form.text_field :gender %>
-  </div>
-
-  <div>
-    <%= form.label :phone_number, style: "display: block" %>
-    <%= form.text_field :phone_number %>
-  </div>
-
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div>
-    <%= form.label :instagram, style: "display: block" %>
-    <%= form.text_field :instagram %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+        </ul>
+      </div>
+  <% end %>
+  <%= tmp.text_field :first_name %>
+  <%= tmp.text_field :second_name %>
+  <%= tmp.text_field :birth_date %>
+  <%#= tmp.text_field :gender %>
+  <%= tmp.text_field :phone_number %>
+  <%= tmp.text_field :email %>
+  <%= tmp.text_field :instagram %>
+  <%= tmp.submit %>
 <% end %>
